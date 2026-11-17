@@ -14,13 +14,25 @@ char** fizzBuzz(int n, int* returnSize)
     {
         res[i-1]=malloc(sizeof(char)*9);
         if(i%3==0&&i%5==0)
-        strcpy(res[i-1],"FizzBuzz");
+        {
+            res[i-1]=malloc(sizeof(char)*9);
+            strcpy(res[i-1],"FizzBuzz");
+        }
         else if(i%3==0)
-        strcpy(res[i-1],"Fizz");
+        {
+            res[i-1]=malloc(sizeof(char)*5);
+            strcpy(res[i-1],"Fizz");
+        }
         else if(i%5==0)
-        strcpy(res[i-1],"Buzz");
+        {
+            res[i-1]=malloc(sizeof(char)*5);
+            strcpy(res[i-1],"Buzz");
+        }
         else
-        sprintf(res[i-1],"%d",i);
+        {
+            res[i-1]=malloc(sizeof(char)*12);
+            sprintf(res[i-1],"%d",i);
+        }
     }
     return res;
 }
