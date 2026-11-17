@@ -12,7 +12,7 @@ char** fizzBuzz(int n, int* returnSize)
     *returnSize=n;
     for(int i=1;i<=n;i++)
     {
-        res[i-1]=malloc(sizeof(char)*12);
+        res[i-1]=malloc(sizeof(char)*9);
         if(i%3==0&&i%5==0)
         strcpy(res[i-1],"FizzBuzz");
         else if(i%3==0)
