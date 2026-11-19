@@ -1,16 +1,22 @@
-bool canJump(int* nums, int numsSize) 
-{
-    int jump_counter = 0, sum=0,i=0;
-    while (i < numsSize && jump_counter < numsSize -1)
+#include <stdbool.h>
+
+bool canJump(int* nums, int numsSize) {
+    int max_reach = 0;
+    
+    for (int i = 0; i < numsSize; i++) 
     {
-        if (i > jump_counter)
-            break;
-        if (i + nums[i] > jump_counter)
-            jump_counter = i + nums[i];
-        printf("%d ",jump_counter);
-        i++;
+        if (i > max_reach) 
+        {
+            return false;
+        }
+        if (i + nums[i] > max_reach) 
+        {
+            max_reach = i + nums[i];
+        }
+        if (max_reach >= numsSize - 1) {
+            return true;
+        }
     }
-    if (jump_counter >= numsSize - 1)
-        return (true);
-    return (false);
+    
+    return true;
 }
