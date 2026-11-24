@@ -5,7 +5,7 @@ bool isPowerOfTwo(int n)
     {
         if(sum==n)
         return 1;
-        sum=sum*2;
+        sum=sum<<1;;
     }
     return 0;
     
